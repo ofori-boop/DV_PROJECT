@@ -1,0 +1,48 @@
+Project Description
+This project simulates a Distance Vector (DV) Routing Protocol using Python.
+ Routers are configured to communicate via UDP ports, calculate shortest paths, and exchange routing information.
+  The program is designed for educational purposes to demonstrate DV protocol principles.
+
+How to Run
+Start a Router: Run main.py in a terminal:
+
+bash
+Copy code
+##...............python main.py
+Enter the Router ID (e.g., 10, 20, etc.).
+
+Router Commands: Use the following commands in the router CLI:
+
+configure_interface <interface_id> <port>: Add an interface. Example:
+yaml
+Copy code
+configure_interface 10001 5001
+set_link <interface_id> <neighbor_id> <cost>: Define a link to a neighbor. Example:
+Copy code
+set_link 10001 20 3
+start_routing: Begin routing updates.
+stop_routing: Stop routing updates.
+show_routing_table: View the routing table.
+exit: Exit the router.
+
+
+Example Test
+Enter Router ID (e.g., 10, 20): 50
+Router CLI Commands:
+ - configure_interface <interface_id> <port>
+ - set_link <interface_id> <neighbor_id> <cost>
+ - start_routing
+ - stop_routing
+ - show_routing_table
+ - exit
+Router 50 > configure_interface 10002 5002
+Interface 10002 configured on port 5002
+Router 50 > set_link 10001 20 2
+Interface 10001 not found.
+Router 50 > set_link 10002 50 3
+Link to router 50 set with cost 3
+Router 50 > start_routing
+Routing protocol started.
+Router 50 > show_routing_table
+Routing Table for Router 50:
+Destination: 50, Next Hop: 50, Cost: 3
